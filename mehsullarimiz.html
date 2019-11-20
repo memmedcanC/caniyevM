@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <title>Mehsullarimiz</title>
+            
+            
+            <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+              <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+              <style>
+              .big-banner{
+              background-image : url('images/head/1.png');
+              background-size : cover;
+              height : 100%;
+              }
+              .carousel-inner img {
+                width: 100%;
+                height: 100%;
+              }
+              .image:hover{
+                transform: scale(1.5);
+              }
+              .imageH:hover{
+                transform: scale(1.2);
+                transition: transform 1.5s;
+              }
+              .image{
+                width: 100px;
+                height: 100px;
+                left: 0;
+                transition: transform 2s;
+              }
+              #containerId{
+                position: relative;
+                width: 100px;
+                height: 100px;
+                display: inline-block;
+              }
+              .overlay{
+                position: absolute;
+                transition: all .3s ease;
+                opacity: 0;
+                background-color: #eeeeee ;
+              }
+              .text{
+                color: white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 20px;
+              }
+              .overlayTop{
+                height: 0;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background-color:transparent;
+              }
+              #containerId:hover .overlay{
+                width: 100%;
+                opacity: 1;
+              }
+              #containerId:hover .overlayTop{
+                height: 100%;
+              }
+              </style>
+              
+    </head>
+
+    <body>
+            <div class = "row">
+                    <div class = "col-sm-12">
+                  <div class = "jumbotron big-banner">
+                    <div class = "text-white text-center">
+                  <h1>Online Restoran</h1>
+                   </div>
+                      <br>
+                      <br>    
+                      <br>
+                      <div class = "text-white text-center">
+                          <h3>Restoranımızdan yeməkləri seçin və sifariş verin</h3>
+                           </div>
+                      <br>
+                      <br>
+                      <div class = "text-white text-center">
+                           <p><i class="fas fa-phone"></i>: +994 (50) 600 05 67</p>
+                          </div><br>
+                          <div class = "text-white text-center">
+                           <p id = "saatI"></p>
+                          </div>
+                  </div>
+                  </div>
+                  </div>
+                  <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+                        <a class="navbar-brand" href="#">
+                          <img class="imageH" src="images/logo/logo.png" alt="logo" style="width:90px;">
+                        </a>                      
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a href="Online Restoran.html" class="nav-link" href="#">Əsas</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Haqqımızda</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="mehsullarimiz.html">Məhsullar</a>
+                          </li>
+                          <li class="nav-item">
+                            <a data-toggle="collapse" data-target="#elaqe" class="nav-link" href="#">Əlaqə</a>
+                          </li>
+                          
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                              Əməkdaşlarımız
+                            </a>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Developia Engineering</a>
+                              <a class="dropdown-item" href="#">Google</a>
+                              <a class="dropdown-item" href="http://altibase.com/?gclid=CjwKCAiAzanuBRAZEiwA5yf4uohNKoi96KYGWxubKPqvbSKKkreMdWdVrN4h19IGwXUNb-aJQK-s6RoCeUQQAvD_BwE">Oracle</a>
+                              <a class="dropdown-item" href="https://products.office.com/en/compare-all-microsoft-office-products-b?&market=az&ef_id=CjwKCAiAzanuBRAZEiwA5yf4uhRtZF0s9Wy851FJNQgzvW-RlgxWJ1PYRvrC_-i2rD0t2vYBnt7Z8RoCtscQAvD_BwE%3aG%3as&OCID=AID2000136_SEM_0824aWjr&MarinID=s0824aWjr%7c340669507902%7cmicrosoft+office%7ce%7cc%7c%7c59995425097%7caud-473968998633%3akwd-11647891&lnkd=Google_O365SMB_NI&gclid=CjwKCAiAzanuBRAZEiwA5yf4uhRtZF0s9Wy851FJNQgzvW-RlgxWJ1PYRvrC_-i2rD0t2vYBnt7Z8RoCtscQAvD_BwE&activetab=tab%3aprimaryr2">Microsoft</a>
+                            </div>
+                          </li>
+                          
+                        </ul>
+                      </nav>
+	<div style="background-color: bisque;" class="collapse" id="elaqe">
+    <div align = "left"><a href="tel:+994506000567"><img style="width: 50px; height: 50px;" src="images/logo/call.png" alt="call me"></a></div>
+    <div align = "right"><a href="mailto:memmedcan00c2663@gmail.com"><img width = "50" height = "50" src = "images/logo/gmail.png"/></a></div>
+  </div><br>
+                      <div class="text-center" class="container"><h2>Məhsullarimiz</h2></div>
+                      <div class="container">
+                  <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                          <a data-toggle="collapse" data-target="#seher" class="nav-link active">Səhər yeməkləri</a>
+                        </li>
+                        <li class="nav-item">
+                          <a data-toggle="collapse" data-target="#et" class="nav-link">Ət yeməkləri</a>
+                        </li>
+                        <li class="nav-item">
+                          <a data-toggle="collapse" data-target="#qelyenalti" class="nav-link">Qəlyanaltılar</a>
+                        </li>
+                        <li class="nav-item">
+                          <a data-toggle="collapse" data-target="#desert" class="nav-link">Desertlər</a>
+                        </li>
+                        <li class="nav-item">
+                          <a data-toggle="collapse" data-target="#icki" class="nav-link">İçkilər</a>
+                        </li>
+                      </ul>
+						
+                      <br>
+
+                  <div id="seher" align = "center">
+                      <div id="səhər" class ="container-fluid" >
+                          <h3 id = "h3">Səhər yeməkləri</h3>
+                      </div> 
+                          <br>
+                      <div id="containerId"> 
+                        <!-- <div class="row"> -->
+                          <a href= "#"><img class="image" src="images/menu/1.jpg"/></a>
+                          <div class="overlay overlayTop">
+                            <div class="text">20$</div>
+                          </div>
+                      <a href="#">Qayğanaqlı yemək</a>
+                      </div>
+                      <div id="containerId"> 
+                          <!-- <div class="row"> -->
+                            <a href= "#"><img class="image" src="images/menu/2.jpg"/></a>
+                            <div class="overlay overlayTop">
+                              <div class="text">15.85$</div>
+                            </div>
+                            <a href="#">Pesto souslu pasta</a>
+                        </div>
+                        <div id="containerId"> 
+                            <!-- <div class="row"> -->
+                              <a href= "#"><img class="image" src="images/menu/2.jpg"/></a>
+                              <div class="overlay overlayTop">
+                                <div class="text">5.25$</div>
+                              </div>
+                              <a href="#">Omletli səhər yeməyi</a>
+                          </div>
+                          <div id="containerId"> 
+                              <!-- <div class="row"> -->
+                                <a href= "#"><img class="image" src="images/menu/3.jpg"/></a>
+                                <div class="overlay overlayTop">
+                                  <div class="text">10$</div>
+                                </div>
+                                <a href="#">Fettucine Alfredo</a>
+                            </div>
+                            <div id="containerId"> 
+                                <!-- <div class="row"> -->
+                                  <a href= "#"><img class="image" src="images/menu/5.jpg"/></a>
+                                  <div class="overlay overlayTop">
+                                    <div class="text">1.85$</div>
+                                  </div>
+                                  <a href="#">Penne arabiata</a>
+                              </div>
+                              <div id="containerId"> 
+                                  <!-- <div class="row"> -->
+                                    <a href= "#"><img class="image" src="images/menu/7.jpg"/></a>
+                                    <div class="overlay overlayTop">
+                                      <div class="text">15.30$</div>
+                                    </div>
+                                    <a href="#">Böreklə səhər yeməyi seti</a>
+                                </div>
+                    </div>
+
+                    <div class="collapse" id="et" align = "center">
+                        <div id="səhər" class ="container-fluid" >
+                            <h3 id = "h3">Ət yeməkləri</h3>
+                        </div> 
+                            <br>
+                        <div id="containerId"> 
+                          <!-- <div class="row"> -->
+                            <a href= "#"><img class="image" src="images/menu/1.jpg"/></a>
+                            <div class="overlay overlayTop">
+                              <div class="text">20$</div>
+                            </div>
+                        <a href="#">Qayğanaqlı yemək</a>
+                        </div>
+                        <div id="containerId"> 
+                            <!-- <div class="row"> -->
+                              <a href= "#"><img class="image" src="images/menu/2.jpg"/></a>
+                              <div class="overlay overlayTop">
+                                <div class="text">15.85$</div>
+                              </div>
+                              <a href="#">Pesto souslu pasta</a>
+                          </div>
+                          <div id="containerId"> 
+                              <!-- <div class="row"> -->
+                                <a href= "#"><img class="image" src="images/menu/2.jpg"/></a>
+                                <div class="overlay overlayTop">
+                                  <div class="text">5.25$</div>
+                                </div>
+                                <a href="#">Omletli səhər yeməyi</a>
+                            </div>
+                            <div id="containerId"> 
+                                <!-- <div class="row"> -->
+                                  <a href= "#"><img class="image" src="images/menu/3.jpg"/></a>
+                                  <div class="overlay overlayTop">
+                                    <div class="text">10$</div>
+                                  </div>
+                                  <a href="#">Fettucine Alfredo</a>
+                              </div>
+                              <div id="containerId"> 
+                                  <!-- <div class="row"> -->
+                                    <a href= "#"><img class="image" src="images/menu/5.jpg"/></a>
+                                    <div class="overlay overlayTop">
+                                      <div class="text">1.85$</div>
+                                    </div>
+                                    <a href="#">Penne arabiata</a>
+                                </div>
+                                <div id="containerId"> 
+                                    <!-- <div class="row"> -->
+                                      <a href= "#"><img class="image" src="images/menu/7.jpg"/></a>
+                                      <div class="overlay overlayTop">
+                                        <div class="text">15.30$</div>
+                                      </div>
+                                      <a href="#">Böreklə səhər yeməyi seti</a>
+                                  </div>
+                                  <div id="containerId"> 
+                                    <!-- <div class="row"> -->
+                                      <a href= "#"><img class="image" src="images/menu/1.jpg"/></a>
+                                      <div class="overlay overlayTop">
+                                        <div class="text">20$</div>
+                                      </div>
+                                  <a href="#">Qayğanaqlı yemək</a>
+                                  </div>
+                                  <div id="containerId"> 
+                                      <!-- <div class="row"> -->
+                                        <a href= "#"><img class="image" src="images/menu/2.jpg"/></a>
+                                        <div class="overlay overlayTop">
+                                          <div class="text">15.85$</div>
+                                        </div>
+                                        <a href="#">Pesto souslu pasta</a>
+                                    </div>
+                                    <div id="containerId"> 
+                                        <!-- <div class="row"> -->
+                                          <a href= "#"><img class="image" src="images/menu/2.jpg"/></a>
+                                          <div class="overlay overlayTop">
+                                            <div class="text">5.25$</div>
+                                          </div>
+                                          <a href="#">Omletli səhər yeməyi</a>
+                                      </div>
+                                      <div id="containerId"> 
+                                          <!-- <div class="row"> -->
+                                            <a href= "#"><img class="image" src="images/menu/3.jpg"/></a>
+                                            <div class="overlay overlayTop">
+                                              <div class="text">10$</div>
+                                            </div>
+                                            <a href="#">Fettucine Alfredo</a>
+                                        </div>
+                                        <div id="containerId"> 
+                                            <!-- <div class="row"> -->
+                                              <a href= "#"><img class="image" src="images/menu/5.jpg"/></a>
+                                              <div class="overlay overlayTop">
+                                                <div class="text">1.85$</div>
+                                              </div>
+                                              <a href="#">Penne arabiata</a>
+                                          </div>
+                                          <div id="containerId"> 
+                                              <!-- <div class="row"> -->
+                                                <a href= "#"><img class="image" src="images/menu/7.jpg"/></a>
+                                                <div class="overlay overlayTop">
+                                                  <div class="text">15.30$</div>
+                                                </div>
+                                                <a href="#">Böreklə səhər yeməyi seti</a>
+                                            </div>
+                      </div>
+                      <div class="collapse" id="qelyenalti" align = "center">
+                          <div id="səhər" class ="container-fluid" >
+                              <h3 id = "h3">Qəlyanaltılar</h3>
+                          </div> 
+                              <br>
+                          <div id="containerId"> 
+                            <!-- <div class="row"> -->
+                              <a href= "#"><img class="image" src="images/menu/1.jpg"/></a>
+                              <div class="overlay overlayTop">
+                                <div class="text">20$</div>
+                              </div>
+                          <a href="#">Qayğanaqlı yemək</a>
+                          </div>
+                          <div id="containerId"> 
+                              <!-- <div class="row"> -->
+                                <a href= "#"><img class="image" src="images/menu/2.jpg"/></a>
+                                <div class="overlay overlayTop">
+                                  <div class="text">15.85$</div>
+                                </div>
+                                <a href="#">Pesto souslu pasta</a>
+                            </div>
+                            <div id="containerId"> 
+                                <!-- <div class="row"> -->
+                                  <a href= "#"><img class="image" src="images/menu/2.jpg"/></a>
+                                  <div class="overlay overlayTop">
+                                    <div class="text">5.25$</div>
+                                  </div>
+                                  <a href="#">Omletli səhər yeməyi</a>
+                              </div>
+                              <div id="containerId"> 
+                                  <!-- <div class="row"> -->
+                                    <a href= "#"><img class="image" src="images/menu/3.jpg"/></a>
+                                    <div class="overlay overlayTop">
+                                      <div class="text">10$</div>
+                                    </div>
+                                    <a href="#">Fettucine Alfredo</a>
+                                </div>
+                                <div id="containerId"> 
+                                    <!-- <div class="row"> -->
+                                      <a href= "#"><img class="image" src="images/menu/5.jpg"/></a>
+                                      <div class="overlay overlayTop">
+                                        <div class="text">1.85$</div>
+                                      </div>
+                                      <a href="#">Penne arabiata</a>
+                                  </div>
+                                  <div id="containerId"> 
+                                      <!-- <div class="row"> -->
+                                        <a href= "#"><img class="image" src="images/menu/7.jpg"/></a>
+                                        <div class="overlay overlayTop">
+                                          <div class="text">15.30$</div>
+                                        </div>
+                                        <a href="#">Böreklə səhər yeməyi seti</a>
+                                    </div>
+                        </div>
+                        <div class="collapse" id="desert" align = "center">
+                          <div id="səhər" class ="container-fluid" >
+                              <h3 id = "h3">Desertlər</h3>
+                          </div> 
+                              <br>
+                          <div id="containerId"> 
+                            <!-- <div class="row"> -->
+                              <a href= "#"><img class="image" src="images/menu/1.jpg"/></a>
+                              <div class="overlay overlayTop">
+                                <div class="text">20$</div>
+                              </div>
+                          <a href="#">Qayğanaqlı yemək</a>
+                          </div>
+                          <div id="containerId"> 
+                              <!-- <div class="row"> -->
+                                <a href= "#"><img class="image" src="images/menu/2.jpg"/></a>
+                                <div class="overlay overlayTop">
+                                  <div class="text">15.85$</div>
+                                </div>
+                                <a href="#">Pesto souslu pasta</a>
+                            </div>
+                            <div id="containerId"> 
+                                <!-- <div class="row"> -->
+                                  <a href= "#"><img class="image" src="images/menu/2.jpg"/></a>
+                                  <div class="overlay overlayTop">
+                                    <div class="text">5.25$</div>
+                                  </div>
+                                  <a href="#">Omletli səhər yeməyi</a>
+                              </div>
+                              <div id="containerId"> 
+                                  <!-- <div class="row"> -->
+                                    <a href= "#"><img class="image" src="images/menu/3.jpg"/></a>
+                                    <div class="overlay overlayTop">
+                                      <div class="text">10$</div>
+                                    </div>
+                                    <a href="#">Fettucine Alfredo</a>
+                                </div>
+                                <div id="containerId"> 
+                                    <!-- <div class="row"> -->
+                                      <a href= "#"><img class="image" src="images/menu/5.jpg"/></a>
+                                      <div class="overlay overlayTop">
+                                        <div class="text">1.85$</div>
+                                      </div>
+                                      <a href="#">Penne arabiata</a>
+                                  </div>
+                                  <div id="containerId"> 
+                                      <!-- <div class="row"> -->
+                                        <a href= "#"><img class="image" src="images/menu/7.jpg"/></a>
+                                        <div class="overlay overlayTop">
+                                          <div class="text">15.30$</div>
+                                        </div>
+                                        <a href="#">Böreklə səhər yeməyi seti</a>
+                                    </div>
+                        </div>
+                        <div class="collapse" id="icki" align = "center">
+                          <div id="səhər" class ="container-fluid" >
+                              <h3 id = "h3">İçkilər</h3>
+                          </div> 
+                              <br>
+                          <div id="containerId"> 
+                            <!-- <div class="row"> -->
+                              <a href= "#"><img class="image" src="images/menu/7.jpg"/></a>
+                              <div class="overlay overlayTop">
+                                <div class="text">20$</div>
+                              </div>
+                          <a href="#">Qayğanaqlı yemək</a>
+                          </div>
+                          <div id="containerId"> 
+                              <!-- <div class="row"> -->
+                                <a href= "#"><img class="image" src="images/menu/6.jpg"/></a>
+                                <div class="overlay overlayTop">
+                                  <div class="text">15.85$</div>
+                                </div>
+                                <a href="#">Pesto souslu pasta</a>
+                            </div>
+                            <div id="containerId"> 
+                                <!-- <div class="row"> -->
+                                  <a href= "#"><img class="image" src="images/menu/4.jpg"/></a>
+                                  <div class="overlay overlayTop">
+                                    <div class="text">5.25$</div>
+                                  </div>
+                                  <a href="#">Omletli səhər yeməyi</a>
+                              </div>
+                              <div id="containerId"> 
+                                  <!-- <div class="row"> -->
+                                    <a href= "#"><img class="image" src="images/menu/6.jpg"/></a>
+                                    <div class="overlay overlayTop">
+                                      <div class="text">10$</div>
+                                    </div>
+                                    <a href="#">Fettucine Alfredo</a>
+                                </div>
+                                <div id="containerId"> 
+                                    <!-- <div class="row"> -->
+                                      <a href= "#"><img class="image" src="images/menu/4.jpg"/></a>
+                                      <div class="overlay overlayTop">
+                                        <div class="text">1.85$</div>
+                                      </div>
+                                      <a href="#">Penne arabiata</a>
+                                  </div>
+                                  <div id="containerId"> 
+                                      <!-- <div class="row"> -->
+                                        <a href= "#"><img class="image" src="images/menu/7.jpg"/></a>
+                                        <div class="overlay overlayTop">
+                                          <div class="text">15.30$</div>
+                                        </div>
+                                        <a href="#">Böreklə səhər yeməyi seti</a>
+                                    </div>
+                        </div>
+                    </div>
+                    <br>
+                    </div>
+                    <div class = "jumbotron">
+                            <div class="container">
+                            <div class="row">
+                              <div class="col-sm-4">
+                                <h3>Bizimlə əlaqə</h3>
+                                <small>Yusif vəzir Çəmənzəminli, Nərimanov Ray, Bakı</small>
+                                <small>+994 (50) 600 0567</small>
+                                <small>Bazarertəsi-Şənbə : 09:00 - 18:00</small>
+                              </div>
+                              <div class="col-sm-3">
+                                <h3>Məlumat</h3>
+                                <a href = "">İstiafdə qaydaları</a><br>
+                                <a href = "">Xəbərlər</a><br>
+                                <a href = "">Hüquqlar</a><br>
+                                <a href = "">Kömək</a><br>
+                                <a href = "">Bizimlə inkişaf edin</a>
+                              </div>
+                              <div class="col-sm-3">
+                                <h3>Kateqoriya</h3>        
+                                <a href = "">Ərzaq</a><br>
+                                <a href = "">Restoran</a><br>
+                                <a href = "">Desertlər</a><br>
+                                <a href = "">Reseptlər</a>
+                          
+                              </div>
+                              <div class="col-sm-2">
+                                <h3>Sualınız var?</h3> 
+                              <a href = "">info@lunchway.az</a>
+                                
+                              </div>
+                            </div>
+                            <br><br>
+                            <div class = "container">
+                          
+                            <p class = "text-center">Copyright @2019 All rights reserved | Created by <a href = "">Developia Engineering</a></p>
+                          
+                          </div>
+                            
+                            </div>
+    </body>
+</html>
